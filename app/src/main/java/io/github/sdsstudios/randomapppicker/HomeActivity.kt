@@ -13,9 +13,7 @@ import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
-
-
-class HomeActivity : AppCompatActivity(),  OnAppClickListener {
+class HomeActivity : AppCompatActivity(), OnAppClickListener {
 
     private val mRecyclerView: RecyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerViewApps) }
     private val mSharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(this) }
@@ -55,12 +53,12 @@ class HomeActivity : AppCompatActivity(),  OnAppClickListener {
         }).start()
     }
 
-    private fun saveAppList(){
+    private fun saveAppList() {
         mAllAppLists[0].packages = mAppListAdapter.selectedPackageNames
         mSharedPreferences.edit().putString(AppList.KEY_APP_LISTS, AppList.serialize(mAllAppLists)).apply()
     }
 
-    private fun updateToolbarText(){
+    private fun updateToolbarText() {
         supportActionBar!!.title = "Selected ${mAppListAdapter.selectedItemPositions.size} Apps"
     }
 

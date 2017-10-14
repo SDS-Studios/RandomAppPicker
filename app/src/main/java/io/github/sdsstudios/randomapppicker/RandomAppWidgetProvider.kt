@@ -43,13 +43,18 @@ class RandomAppWidgetProvider : AppWidgetProvider() {
 
         val chosenPackageNames = AppList.getAllAppLists(ctx)[0].packages
 
-        if (intent.action == CLICK_ACTION && chosenPackageNames.isNotEmpty()) {
-            val randomIndex = mRandom.nextInt(chosenPackageNames.size)
+        if (intent.action == CLICK_ACTION) {
 
-            ctx.startActivity(ctx.packageManager.getLaunchIntentForPackage(chosenPackageNames[randomIndex]))
-            Toast.makeText(ctx, R.string.opening_random_app, Toast.LENGTH_SHORT).show()
+            if (chosenPackageNames.isNotEmpty()) {
+                val randomIndex = mRandom.nextInt(chosenPackageNames.size)
+
+                ctx.startActivity(ctx.packageManager.getLaunchIntentForPackage(chosenPackageNames[randomIndex]))
+                Toast.makeText(ctx, R.string.opening_random_app, Toast.LENGTH_SHORT).show()
+
+            } else {
+                Toast.makeText(ctx, R.string.you_havent_chosen_any_apps, Toast.LENGTH_SHORT).show()
+            }
         }
-
         super.onReceive(ctx, intent)
     }
 }
