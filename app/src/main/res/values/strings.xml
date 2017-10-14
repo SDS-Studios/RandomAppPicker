@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Random App Picker</string>
     <string name="action_settings">Settings</string>
-    <string name="choose_apps">Choose Apps...</string>
-    <string name="opening_random_app">Opening Random App</string>
+    <string name="choose_apps">Choose Apps…</string>
+    <string name="opening_random_app">Opening a random app</string>
+    <string name="choose_apps_message">Choose which apps should be opened when the widget is pressed.</string>
 </resources>
