@@ -13,8 +13,10 @@ import android.widget.TextView
  * Created by sds2001 on 14/10/17.
  */
 
-class AppListAdapter(ctx: Context, modelList: List<ApplicationInfo>, selectedPackageNames: List<String>)
-    : SelectableAdapter<ApplicationInfo, AppListAdapter.ViewHolder>(ctx, modelList), OnAppClickListener {
+class AppListAdapter(ctx: Context, modelList: List<ApplicationInfo>, selectedPackageNames: List<String>,
+                     private val mOnAppClickListener: OnAppClickListener)
+
+    : SelectableAdapter<ApplicationInfo, AppListAdapter.ViewHolder>(ctx, modelList){
 
     private val mPackageManager = ctx.packageManager
 
@@ -27,7 +29,7 @@ class AppListAdapter(ctx: Context, modelList: List<ApplicationInfo>, selectedPac
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder =
             ViewHolder(
                     LayoutInflater.from(ctx).inflate(R.layout.app_item_adapter, null),
-                    this
+                    mOnAppClickListener
             )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -42,10 +44,6 @@ class AppListAdapter(ctx: Context, modelList: List<ApplicationInfo>, selectedPac
         holder.textViewAppName.text = appInfo.loadLabel(mPackageManager)
         holder.textViewPackageName.text = appInfo.packageName
         holder.imageViewAppIcon.setImageDrawable(appInfo.loadIcon(mPackageManager))
-    }
-
-    override fun onAppClick(position: Int) {
-        toggleSelection(position)
     }
 
     class ViewHolder(itemView: View, onAppClickListener: OnAppClickListener) : RecyclerView.ViewHolder(itemView) {

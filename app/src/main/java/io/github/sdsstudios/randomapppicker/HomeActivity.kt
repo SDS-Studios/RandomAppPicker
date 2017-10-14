@@ -15,7 +15,7 @@ import java.util.*
 
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(),  OnAppClickListener {
 
     private val mRecyclerView: RecyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerViewApps) }
     private val mSharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(this) }
@@ -45,11 +45,12 @@ class HomeActivity : AppCompatActivity() {
                         .compareTo(text2.loadLabel(packageManager).toString(), ignoreCase = true)
             }
 
-            mAppListAdapter = AppListAdapter(this, packages, mAllAppLists[0].packages)
+            mAppListAdapter = AppListAdapter(this, packages, mAllAppLists[0].packages, this)
 
             runOnUiThread {
                 progress.dismiss()
                 mRecyclerView.adapter = mAppListAdapter
+                updateToolbarText()
             }
         }).start()
     }
@@ -57,6 +58,15 @@ class HomeActivity : AppCompatActivity() {
     private fun saveAppList(){
         mAllAppLists[0].packages = mAppListAdapter.selectedPackageNames
         mSharedPreferences.edit().putString(AppList.KEY_APP_LISTS, AppList.serialize(mAllAppLists)).apply()
+    }
+
+    private fun updateToolbarText(){
+        supportActionBar!!.title = "Selected ${mAppListAdapter.selectedItemPositions.size} Apps"
+    }
+
+    override fun onAppClick(position: Int) {
+        mAppListAdapter.toggleSelection(position)
+        updateToolbarText()
     }
 
     override fun onPause() {
