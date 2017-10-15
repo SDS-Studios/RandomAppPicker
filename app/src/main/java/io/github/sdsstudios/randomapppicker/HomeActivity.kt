@@ -1,6 +1,7 @@
 package io.github.sdsstudios.randomapppicker
 
 import android.app.ProgressDialog
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -9,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
+import kotlin.coroutines.experimental.buildSequence
 
 class HomeActivity : AppCompatActivity(), OnAppClickListener {
 
@@ -33,13 +35,7 @@ class HomeActivity : AppCompatActivity(), OnAppClickListener {
                 "loading...", true)
 
         Thread(Runnable {
-            val packages = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
-
-            Collections.sort(packages) { text1, text2 ->
-                text1.loadLabel(packageManager).toString()
-                        .compareTo(text2.loadLabel(packageManager).toString(), ignoreCase = true)
-            }
-
+            val packages = getApps()
             mAppListAdapter = AppListAdapter(this, packages, mAllAppLists[0].packages, this)
 
             runOnUiThread {
@@ -48,6 +44,22 @@ class HomeActivity : AppCompatActivity(), OnAppClickListener {
                 updateToolbarText()
             }
         }).start()
+    }
+
+    private fun getApps(): List<ApplicationInfo> {
+        val userApps: List<ApplicationInfo> = buildSequence {
+
+            //get all the installed apps
+            packageManager.getInstalledApplications(PackageManager.GET_META_DATA).forEach { app ->
+                //only allow apps which can be launched by the user
+                if (packageManager.getLaunchIntentForPackage(app.packageName) != null) yield(app)
+            }
+
+        }.toList()
+
+        return userApps.sortedWith(Comparator { text1, text2 ->
+            text1.loadLabel(packageManager).toString().compareTo(text2.loadLabel(packageManager).toString(), ignoreCase = true)
+        })
     }
 
     private fun saveAppList() {
