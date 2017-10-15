@@ -16,7 +16,7 @@ import android.widget.TextView
 class AppListAdapter(ctx: Context, modelList: List<ApplicationInfo>, selectedPackageNames: List<String>,
                      private val mOnAppClickListener: OnAppClickListener)
 
-    : SelectableAdapter<ApplicationInfo, AppListAdapter.ViewHolder>(ctx, modelList){
+    : SelectableAdapter<ApplicationInfo, AppListAdapter.ViewHolder>(ctx, modelList) {
 
     private val mPackageManager = ctx.packageManager
 
@@ -44,6 +44,20 @@ class AppListAdapter(ctx: Context, modelList: List<ApplicationInfo>, selectedPac
         holder.textViewAppName.text = appInfo.loadLabel(mPackageManager)
         holder.textViewPackageName.text = appInfo.packageName
         holder.imageViewAppIcon.setImageDrawable(appInfo.loadIcon(mPackageManager))
+    }
+
+    fun selectAll() {
+        selectedItemPositions.clear()
+        selectedItemPositions.addAll(IntRange(0, modelList.size - 1))
+
+        notifyDataSetChanged()
+        mOnAppClickListener.updateToolbarText()
+    }
+
+    fun unSelectAll() {
+        selectedItemPositions.clear()
+        notifyDataSetChanged()
+        mOnAppClickListener.updateToolbarText()
     }
 
     class ViewHolder(itemView: View, onAppClickListener: OnAppClickListener) : RecyclerView.ViewHolder(itemView) {

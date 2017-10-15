@@ -8,6 +8,8 @@ import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.Menu
+import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 import kotlin.coroutines.experimental.buildSequence
@@ -26,6 +28,28 @@ class HomeActivity : AppCompatActivity(), OnAppClickListener {
         setSupportActionBar(toolbar)
 
         populateRecyclerView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        when (item!!.itemId) {
+            R.id.action_select_all -> {
+                mAppListAdapter.selectAll()
+                return true
+            }
+
+            R.id.action_un_select_all -> {
+                mAppListAdapter.unSelectAll()
+                return true
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun populateRecyclerView() {
@@ -67,7 +91,7 @@ class HomeActivity : AppCompatActivity(), OnAppClickListener {
         mSharedPreferences.edit().putString(AppList.KEY_APP_LISTS, AppList.serialize(mAllAppLists)).apply()
     }
 
-    private fun updateToolbarText() {
+    override fun updateToolbarText() {
         supportActionBar!!.title = "Selected ${mAppListAdapter.selectedItemPositions.size} Apps"
     }
 

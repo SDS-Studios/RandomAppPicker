@@ -38,6 +38,7 @@ abstract class SelectableAdapter<T : ApplicationInfo, VH : RecyclerView.ViewHold
             return list
         }
 
+
     fun isSelected(position: Int): Boolean = selectedItemPositions.contains(position)
 
     fun toggleSelection(position: Int) {
