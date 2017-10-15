@@ -1,9 +1,6 @@
 package io.github.sdsstudios.randomapppicker
 
 import android.app.ProgressDialog
-import android.appwidget.AppWidgetManager
-import android.content.ComponentName
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -71,12 +68,5 @@ class HomeActivity : AppCompatActivity(), OnAppClickListener {
         super.onPause()
 
         saveAppList()
-
-        val ids = AppWidgetManager.getInstance(application).getAppWidgetIds(ComponentName(application, RandomAppWidgetProvider::class.java))
-        val intent = Intent(this, RandomAppWidgetProvider::class.java)
-
-        intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
-        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
-        sendBroadcast(intent)
     }
 }
