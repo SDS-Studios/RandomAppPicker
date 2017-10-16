@@ -1,6 +1,7 @@
 package io.github.sdsstudios.randomapppicker
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -45,6 +46,11 @@ class HomeActivity : AppCompatActivity(), OnAppClickListener {
 
             R.id.action_un_select_all -> {
                 mAppListAdapter.unSelectAll()
+                return true
+            }
+
+            R.id.action_about -> {
+                startActivity(Intent(this, AboutActivity::class.java))
                 return true
             }
         }

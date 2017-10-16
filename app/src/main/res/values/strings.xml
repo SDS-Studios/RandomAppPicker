@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Random App Picker</string>
-    <string name="action_settings">Settings</string>
+    <string name="settings">Settings</string>
     <string name="choose_apps">Choose Apps…</string>
     <string name="opening_random_app">Opening a random app</string>
     <string name="choose_apps_message">Choose which apps should be opened when the widget is pressed.</string>
@@ -8,4 +8,14 @@
     <string name="un_select_all">Un-select all</string>
     <string name="select_all">Select All</string>
     <string name="about">About</string>
+    <string name="app_version">1.0</string>
+    <string name="version">Version</string>
+    <string name="developers">Developers</string>
+    <string name="changelog">Changelog</string>
+    <string name="rate_the_app">Rate and Review</string>
+    <string name="source">Source code</string>
+    <string name="open_source_licenses">Open Source Licenses</string>
+    <string name="whats_new">What\'s New</string>
+    <string name="okay">Okay</string>
+
 </resources>
