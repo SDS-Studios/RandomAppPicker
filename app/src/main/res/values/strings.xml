@@ -4,7 +4,7 @@
     <string name="choose_apps">Choose Apps…</string>
     <string name="opening_random_app">Opening a random app</string>
     <string name="choose_apps_message">Choose which apps should be opened when the widget is pressed.</string>
-    <string name="you_havent_chosen_any_apps">You haven\'t chosen any apps to open. Open \'Random App Picker' to choose.</string>
+    <string name="you_havent_chosen_any_apps">You haven\'t chosen any apps to open. Open \'Random App Picker\' to choose.</string>
     <string name="un_select_all">Un-select all</string>
     <string name="select_all">Select All</string>
     <string name="about">About</string>
