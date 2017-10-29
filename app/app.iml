@@ -154,7 +154,6 @@
     <orderEntry type="library" name="com.android.support:animated-vector-drawable-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:design-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:transition-26.1.0" level="project" />
-    <orderEntry type="library" name="com.github.deano2390:MaterialShowcaseView-1.1.0" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-analytics-impl-11.4.2" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-analytics-impl-license-11.4.2" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-analytics-license-11.4.2" level="project" />
