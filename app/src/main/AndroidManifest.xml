@@ -33,7 +33,7 @@
         <activity
             android:name=".AboutActivity"
             android:label="@string/about"
-            android:parentActivityName=".HomeActivity"></activity>
+            android:parentActivityName=".HomeActivity" />
     </application>
 
 </manifest>
