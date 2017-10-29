@@ -17,4 +17,8 @@
     <string name="open_source_licenses">Open Source Licenses</string>
     <string name="whats_new">What\'s New</string>
     <string name="okay">Okay</string>
+    <string name="github_link">https://github.com/SDS-Studios/RandomAppPicker</string>
+    <string name="play_store_link">https://play.google.com/store/apps/details?id=io.github.sdsstudios.randomapppicker</string>
+    <string name="email">seth.d.schroeder@gmail.com</string>
+
 </resources>
