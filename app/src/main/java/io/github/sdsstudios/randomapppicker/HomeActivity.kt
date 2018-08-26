@@ -6,18 +6,16 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 import kotlin.coroutines.experimental.buildSequence
 
 class HomeActivity : AppCompatActivity(), OnAppClickListener {
 
-    private val mRecyclerView: RecyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerViewApps) }
+    private val mRecyclerView: androidx.recyclerview.widget.RecyclerView by lazy { findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.recyclerViewApps) }
     private val mSharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(this) }
     private val mAllAppLists: List<AppList> by lazy { AppList.getAllAppLists(this) }
 
@@ -59,7 +57,7 @@ class HomeActivity : AppCompatActivity(), OnAppClickListener {
     }
 
     private fun populateRecyclerView() {
-        mRecyclerView.layoutManager = LinearLayoutManager(this)
+        mRecyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
 
         val progress = ProgressDialog.show(this, "Loading Apps...",
                 "loading...", true)

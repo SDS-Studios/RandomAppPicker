@@ -7,13 +7,13 @@ package io.github.sdsstudios.randomapppicker
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.os.Build
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.TypedValue
 import java.util.*
 
-abstract class SelectableAdapter<T : ApplicationInfo, VH : RecyclerView.ViewHolder>(
+abstract class SelectableAdapter<T : ApplicationInfo, VH : androidx.recyclerview.widget.RecyclerView.ViewHolder>(
         val ctx: Context,
-        var modelList: List<T>) : RecyclerView.Adapter<VH>(){
+        var modelList: List<T>) : androidx.recyclerview.widget.RecyclerView.Adapter<VH>(){
 
     val selectedItemPositions: ArrayList<Int> = ArrayList()
 

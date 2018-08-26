@@ -1,9 +1,9 @@
 package io.github.sdsstudios.randomapppicker
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 
 /**
@@ -12,7 +12,7 @@ import android.view.MenuItem
 
 class AboutActivity : AppCompatActivity() {
 
-    private fun FragmentManager.replaceFragment(fragment: Fragment) {
+    private fun androidx.fragment.app.FragmentManager.replaceFragment(fragment: androidx.fragment.app.Fragment) {
         beginTransaction().replace(R.id.fragment_container, fragment).commit()
     }
 

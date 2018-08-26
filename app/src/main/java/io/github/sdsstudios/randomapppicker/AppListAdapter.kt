@@ -2,7 +2,6 @@ package io.github.sdsstudios.randomapppicker
 
 import android.content.Context
 import android.content.pm.ApplicationInfo
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +25,7 @@ class AppListAdapter(ctx: Context, modelList: List<ApplicationInfo>, selectedPac
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder =
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
             ViewHolder(
                     LayoutInflater.from(ctx).inflate(R.layout.app_item_adapter, null),
                     mOnAppClickListener
@@ -60,7 +59,7 @@ class AppListAdapter(ctx: Context, modelList: List<ApplicationInfo>, selectedPac
         mOnAppClickListener.updateToolbarText()
     }
 
-    class ViewHolder(itemView: View, onAppClickListener: OnAppClickListener) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View, onAppClickListener: OnAppClickListener) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         val view = itemView
         val textViewAppName: TextView = itemView.findViewById(R.id.textViewAppName)
         val textViewPackageName: TextView = itemView.findViewById(R.id.textViewPackageName)
