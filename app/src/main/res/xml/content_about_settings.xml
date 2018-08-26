@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:key="prefLicense"
-        android:title="@string/open_source_licenses" />
+        android:title="@string/open_source_license" />
 
 </PreferenceScreen>
 

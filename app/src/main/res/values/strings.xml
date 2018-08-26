@@ -11,15 +11,19 @@
     <string name="select_all">Select All</string>
     <string name="about">About</string>
     <string name="version">Version</string>
-    <string name="developers">Developers</string>
+    <string name="developers">Developer</string>
     <string name="changelog">Changelog</string>
     <string name="rate_the_app">Rate and Review</string>
     <string name="source">Source code</string>
-    <string name="open_source_licenses">Open Source Licenses</string>
+    <string name="open_source_license">Open Source License</string>
     <string name="whats_new">What\'s New</string>
     <string name="okay">Okay</string>
-    <string name="github_link">https://github.com/SDS-Studios/RandomAppPicker</string>
+    <string name="github_link">https://github.com/sds100/RandomAppPicker</string>
     <string name="play_store_link">https://play.google.com/store/apps/details?id=io.github.sdsstudios.randomapppicker</string>
-    <string name="email">seth.d.schroeder@gmail.com</string>
+    <string name="developer_email">seth.d.schroeder@gmail.com</string>
+    <string name="developer_name">sds100</string>
+    <string name="github">Github</string>
+    <string name="email">Email</string>
+    <string name="developer_github">https://github.com/sds100</string>
 
 </resources>

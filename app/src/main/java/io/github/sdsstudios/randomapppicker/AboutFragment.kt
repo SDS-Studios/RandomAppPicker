@@ -70,7 +70,7 @@ class AboutFragment : PreferenceFragmentCompat(), Preference.OnPreferenceClickLi
 
             FileReader.LICENSE -> {
                 text = FileReader.textFromFileToString(FileReader.LICENSE, activity!!)
-                title = getString(R.string.open_source_licenses)
+                title = getString(R.string.open_source_license)
             }
         }
 
@@ -84,7 +84,7 @@ class AboutFragment : PreferenceFragmentCompat(), Preference.OnPreferenceClickLi
 
     private fun sendEmail() {
         val send = Intent(Intent.ACTION_SENDTO)
-        val uriText = "mailto:" + Uri.encode(getString(R.string.email)) +
+        val uriText = "mailto:" + Uri.encode(getString(R.string.developer_email)) +
                 "?subject=" + Uri.encode("Feedback for Random App Picker") +
                 "&body=" + Uri.encode("")
         val uri = Uri.parse(uriText)
@@ -105,7 +105,7 @@ class AboutFragment : PreferenceFragmentCompat(), Preference.OnPreferenceClickLi
         showCustomDialog(getString(R.string.developers), dialogView = dialogView)
 
         buttonGithub.setOnClickListener {
-            val intentGithub = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/orgs/SDS-Studios"))
+            val intentGithub = Intent(Intent.ACTION_VIEW, Uri.parse(context!!.getString(R.string.developer_github)))
             startActivity(intentGithub)
         }
 
