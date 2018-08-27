@@ -1,6 +1,10 @@
 # Change Log of Random App Picker
 All notable changes to this project will be documented in this file.
 
+### 2.0 27/08/18
+- I lost the key file to upload updates to Google Play so I have to publish the app again with
+  a different package name. Oops!
+
 ### 1.1 27/08/18
 - updated developer information
 - migrated to Firebase Crashlytics.
