@@ -1,4 +1,4 @@
-package io.github.sdsstudios.randomapppicker
+package io.github.sds100.randomapppicker
 
 import android.app.ProgressDialog
 import android.content.Intent

@@ -7,7 +7,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion '28.0.2'
     defaultConfig {
-        applicationId "io.github.sdsstudios.randomapppicker"
+        applicationId "io.github.sds100.randomapppicker"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 3

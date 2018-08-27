@@ -1,10 +1,8 @@
-package io.github.sdsstudios.randomapppicker
+package io.github.sds100.randomapppicker
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Created by sds2001 on 15/10/17.

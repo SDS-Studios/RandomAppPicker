@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.sdsstudios.randomapppicker">
+    package="io.github.sds100.randomapppicker">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity"
+            android:name="io.github.sds100.randomapppicker.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".RandomAppWidgetProvider">
+        <receiver android:name="io.github.sds100.randomapppicker.RandomAppWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -31,9 +31,9 @@
         </receiver>
 
         <activity
-            android:name=".AboutActivity"
+            android:name="io.github.sds100.randomapppicker.AboutActivity"
             android:label="@string/about"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName="io.github.sds100.randomapppicker.HomeActivity" />
     </application>
 
 </manifest>

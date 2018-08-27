@@ -1,4 +1,4 @@
-package io.github.sdsstudios.randomapppicker
+package io.github.sds100.randomapppicker
 
 /**
  * Created by sds2001 on 14/10/17.
@@ -7,7 +7,6 @@ package io.github.sdsstudios.randomapppicker
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.os.Build
-import androidx.recyclerview.widget.RecyclerView
 import android.util.TypedValue
 import java.util.*
 
